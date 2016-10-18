@@ -1,0 +1,66 @@
+<!DOCTYPE>
+<html ng-app="d3">
+    <head>
+        <title>VC Syndication</title>
+        <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+        <link type="text/css" href="style.css" rel="stylesheet" />
+        
+    </head>
+    <body ng-controller="d3Ctrl">
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="https://d3js.org/">
+                        <img class="brand-image" alt="Brand" src="https://upload.wikimedia.org/wikipedia/en/thumb/1/15/Logo_D3.svg/1079px-Logo_D3.svg.png">
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="">VC Syndication<span class="sr-only">(current)</span></a></li>
+                    <li><a href="">with Highlighting</a></li>
+                    </ul>
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                    <input type="text" id="search" class="form-control" placeholder="Search" auto-complete ui-items="names" ng-model="nodeName">
+                    </div>
+                    <button type="submit" ng-click="searchNode()" class="btn btn-primary">Submit</button>
+                </form>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+            </nav>
+        <!--<ui-view></ui-view>-->
+        <p id="explanation">This simple force-directed graph shows investment connections between Venture
+             Capital firms based in Israel. A physical simulation of charged particles and springs places related 
+             VCs in closer proximity, while unrelated VCs are farther apart.</p>
+        <p id="explanation">Doubleclicking on a node will fade out all the nodes and links that aren't connected 
+            to the node you've doubleclicked on.</p>
+        <p id="explanation">Also, you can search for specific VCs using the search option on the top right (don't
+            worry, it has a dropdonw menu to help you find the right one).</p>
+        <svg width="960" height="600"></svg>
+        <p id="explanation">This real world data consists of 109 VC firms which exsisted from 1983-2012. 
+            The data regards 5435 seperate investments 66.31% of them were made with more than 1 partner. </p>
+        <p id="explanation">As seen in the graph, The Israeli VC market is highly syndicated. All but 2 VCs are clustred 
+            in a tightly knit pack of investments.</p>
+        
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+        <script src="/jquery/dist/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="/angular/angular.min.js"></script>
+        <script src="/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/services/service.js"></script>
+        <script type="text/javascript" src="js/controllers/controller.js"></script>
+        <script src="/d3/build/d3.min.js"></script>          
+    </body>
+</html>

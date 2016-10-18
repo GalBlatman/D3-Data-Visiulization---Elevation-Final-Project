@@ -1,0 +1,8 @@
+<div ng-controller="d3EvoCtrl">
+    <svg width="960" height="600"></svg>
+</div>
+<div id="slider">
+    <input class="bar" type="range" id="rangeinput" min="2000" max="2012" ng-model="value" ng-change="threshold(value)"/>
+    <span class="highlight"></span>
+    <output id="rangevalue">{{value}}</output>
+</div>
